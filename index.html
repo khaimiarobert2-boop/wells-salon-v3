@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Wells Salon &amp; Spa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F4EFE9;
+      --ink: #1B1F2A;
+      --mute: #5E6270;
+      --line: #D9D1C7;
+      --card: #FFFFFF;
+      --pink: #C93A68;
+      --gold: #9A7420;
+      box-sizing: border-box;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px)
+    }
+
+    @media (prefers-color-scheme:dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #15131A;
+        --ink: #F3EEF2;
+        --mute: #A9A5B3;
+        --line: #2E2A37;
+        --card: #1E1B26;
+        --pink: #F0709A;
+        --gold: #D9B35A
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #15131A;
+      --ink: #F3EEF2;
+      --mute: #A9A5B3;
+      --line: #2E2A37;
+      --card: #1E1B26;
+      --pink: #F0709A;
+      --gold: #D9B35A
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0
+    }
+
+    html {
+      scroll-padding-top: env(safe-area-inset-top, 0px)
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font: 400 16px/1.6 Outfit, system-ui, sans-serif
+    }
+
+    main {
+      max-width: 524px;
+      margin: 0 auto;
+      padding: 40px 22px 56px
+    }
+
+    h1 {
+      font: 700 clamp(2rem, 9vw, 3rem)/1.05 Fraunces, Georgia, serif;
+      letter-spacing: .02em;
+      word-break: break-word
+    }
+
+    .sub {
+      margin-top: 14px;
+      font-size: 1.1rem
+    }
+
+    .loc {
+      color: var(--mute)
+    }
+
+    .badge {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-weight: 500;
+      font-size: .95rem
+    }
+
+    h2 {
+      font: 500 1.5rem/1.2 Fraunces, Georgia, serif;
+      margin: 44px 0 16px
+    }
+
+    .row {
+      padding: 22px 0;
+      border-top: 1px solid var(--line)
+    }
+
+    .row:last-of-type {
+      border-bottom: 1px solid var(--line)
+    }
+
+    .ic {
+      font-size: 1.4rem;
+      margin-right: 8px;
+      vertical-align: -2px
+    }
+
+    .row h3 {
+      font: 500 1.1rem/1.3 Outfit, sans-serif
+    }
+
+    .row p {
+      color: var(--mute);
+      margin-top: 4px;
+      font-size: .95rem
+    }
+
+    .cta {
+      display: block;
+      margin-top: 36px;
+      background: var(--pink);
+      color: #fff;
+      text-align: center;
+      padding: 16px;
+      border-radius: 12px;
+      font-weight: 500;
+      text-decoration: none
+    }
+
+    .cta:hover {
+      filter: brightness(1.08)
+    }
+
+    .cta:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px
+    }
+
+    footer {
+      margin-top: 28px;
+      text-align: center;
+      color: var(--mute);
+      font-size: .85rem
+    }
+
+    figure {
+      margin: 0
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 14px
+    }
+
+    .hero {
+      margin: 28px 0 22px
+    }
+
+    .thumb {
+      margin-top: 14px
+    }
+
+    .row h3 {
+      display: flex;
+      align-items: center
+    }
+
+    .tag {
+      margin-top: 10px;
+      color: var(--gold);
+      font-family: Fraunces, Georgia, serif;
+      font-style: italic
+    }
+
+    .cap {
+      margin-top: 8px;
+      color: var(--mute);
+      font-size: .9rem
+    }
+
+    .book {
+      display: inline-block;
+      margin-top: 12px;
+      border: 1px solid var(--pink);
+      color: var(--pink);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-weight: 500;
+      font-size: .9rem;
+      text-decoration: none
+    }
+
+    .book:hover {
+      background: var(--pink);
+      color: #fff
+    }
+
+    .book:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px
+    }
+
+    .grp {
+      border-top: 1px solid var(--line)
+    }
+
+    .grp:last-child {
+      border-bottom: 1px solid var(--line)
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 16px 0;
+      font: 500 1.1rem/1.3 Outfit, sans-serif;
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    summary::-webkit-details-marker {
+      display: none
+    }
+
+    summary::after {
+      content: "+";
+      color: var(--pink);
+      font-size: 1.5rem
+    }
+
+    details[open] summary::after {
+      content: "\2013"
+    }
+
+    .grp h4 {
+      margin: 16px 0 4px;
+      font: 500 .78rem Outfit, sans-serif;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--mute)
+    }
+
+    .it {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4px 12px;
+      padding: 9px 0;
+      border-bottom: 1px dashed var(--line);
+      font-size: .95rem
+    }
+
+    .nm {
+      flex: 1 1 55%;
+      min-width: 0
+    }
+
+    .pr {
+      font-weight: 500;
+      text-align: right
+    }
+
+    .bk {
+      font-size: .8rem;
+      color: var(--pink);
+      border: 1px solid var(--pink);
+      border-radius: 999px;
+      padding: 2px 12px;
+      text-decoration: none
+    }
+
+    .bk:hover {
+      background: var(--pink);
+      color: #fff
+    }
+
+    .th {
+      width: 72px;
+      height: 72px;
+      object-fit: cover;
+      border-radius: 10px;
+      flex: none
+    }
+
+    .top {
+      margin-bottom: 24px
+    }
+
+    .intro {
+      color: var(--mute);
+      margin: -6px 0 14px;
+      font-size: .95rem
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <figure class="top"><img src="images/cover.jpg" width="480" height="360"
+        alt="Wells Aesthetics Spa: Skin, Hair, Nails" loading="eager"></figure>
+    <h1>WELLS SALON &amp; SPA</h1>
+    <p class="sub">Premium Hair Styling, Nail Extensions &amp; Luxury Spa</p>
+    <p class="loc">Ambience Mall • Ring Road Westlands</p>
+    <p class="tag">Hub of Beauty… Home of Color</p>
+    <figure class="hero"><img src="images/storefront.jpg" width="480" height="360"
+        alt="Wells Salon Spa storefront in Nairobi" loading="eager"></figure>
+
+
+    <span class="badge">⭐ 4.7 Rated Luxury Wellness Lounge</span>
+
+    <h2>Services</h2>
+    <div class="row">
+      <h3><span class="ic">💇</span>Elite Hair Coloring &amp; Consultation</h3>
+      <p>Shade planning with a colorist before a single drop is mixed.</p><a class="book"
+        data-service="Elite Hair Coloring &amp; Consultation" href="#">Book this service</a>
+      <figure class="thumb"><img src="images/hair-color.jpg" width="480" height="360" alt="Copper-colored locs">
+      </figure>
+    </div>
+    <div class="row">
+      <h3><span class="ic">💆</span>Premium Massages &amp; Full Body Scrubs</h3>
+      <p>Slow, restorative treatments in a quiet spa setting.</p><a class="book"
+        data-service="Premium Massages &amp; Full Body Scrubs" href="#">Book this service</a>
+    </div>
+    <div class="row">
+      <h3><span class="ic">✨</span>Specialized Facials, Waxing &amp; Nail Art</h3>
+      <p>Skin and nail care finished with detail.</p><a class="book"
+        data-service="Specialized Facials, Waxing &amp; Nail Art" href="#">Book this service</a>
+      <figure class="thumb"><img src="images/nails.jpg" width="480" height="360" alt="Pink ombre nail art"></figure>
+    </div>
+
+    <h2>Price list</h2>
+    <p class="intro">Tap a category to see prices. Tap Book to message us about that service.</p>
+    <div id="menu"></div>
+
+    <h2>The space</h2>
+    <figure><img src="images/space.jpg" width="480" height="360"
+        alt="Salon interior with lit mirrors and styling chairs">
+      <figcaption class="cap">Styling stations stocked with L'Oréal Professionnel.</figcaption>
+    </figure>
+
+    <h2>Meet the team</h2>
+    <figure><img src="images/team.jpg" width="480" height="360" alt="The Wells Salon Team at the entrance">
+      <figcaption class="cap">Skin, hair and nails under one roof.</figcaption>
+    </figure>
+
+    <a class="cta" data-service="" href="#">Book a consultation</a>
+    <footer>© Wells Salon &amp; Spa</footer>
+  </main>
+  <script>
+    const PHONE = "254700000000"; // change this one number (international format, no + or spaces)
+    const link = s => "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(s ? "Hi Wells Salon & Spa, I'd like to book: " + s : "Hi Wells Salon & Spa, I'd like to book a consultation");
+    const MENU = [
+      {
+        t: "Hair Styling & Barber", s: [
+          ["Barber", [["Haircut", "1,000", "haircut-men"], ["Kids under 12 years", "600"], ["Gents beard", "500"], ["Razor cut", "2,500"], ["Kids cut", "1,000"], ["Ladies haircut", "3,000", "haircut-women"], ["Ladies trim", "1,500"], ["Ladies split ends cut", "1,000"]]],
+          ["Hair styling", [["Finger coils, curls, permrods, spirals, twistouts (incl. wash)", "3,500"], ["Blow dry brush (incl. wash)", "3,000 - 4,500"], ["Wash and set", "1,500"]]],
+          ["Silk press, incl. deep conditioner (Short / Medium / Long)", [["Silk press", "6,000 / 8,000 / 10,000"]]]]
+      },
+      {
+        t: "Hair Colour & Relaxers", s: [
+          ["Colour, incl. wash & blow (Short / Medium / Long)", [["Ombre / Balayage", "18,000 / 22,000 / 30,000"], ["Tint roots", "10,000 / 12,000 / 14,000"], ["Full head colour (tone to tone)", "12,500 / 17,500 / 25,000"], ["Half head (highlight)", "12,500 / 17,000 / 25,000"], ["Colour on weaves", "10,000 / 12,000 / 15,000"]]],
+          ["Relaxers (Short / Medium / Long)", [["Virgin application", "10,000 / 12,000 / 15,000"], ["Retouch", "8,500 / 10,500 / 12,500"], ["Texlax", "8,500 / 7,500 / 12,500"], ["Keratin smoothing with blow dry", "18,000 / 23,500 / 40,000", "keratin"], ["Curly perms", "8,500 / 12,000 / 15,000"], ["Texturizing", "6,000 / 8,500 / 10,500"]]]]
+      },
+      { t: "Hair Treatments", s: [["Wells signature hair treatments", [["Scalp Advance Treatment", "6,500", "scalp"], ["Absolute Repair Molecular", "10,000", "treatment-products"], ["Moisture Treatment", "3,500"], ["Protein Treatment", "5,500"], ["Own treatment", "3,000"], ["Anti-Pollution Hair Treatment", "4,000"], ["Curl Expression Treatment", "6,500"], ["Colour Toning Treatment", "5,500"], ["Hair Glossing Treatment", "5,500"], ["Reconstructing Treatment", "8,500"], ["Leave-In Treatment", "2,500"], ["Fortifying Treatment", "8,000"], ["Moisture Treatment (intense hydration)", "6,500"]]]] },
+      {
+        t: "Braiding, Weaving & Locs", s: [
+          ["Braiding", [["Knotless braids", "from 2,500"], ["Box braids", "from 2,000"], ["Normal lines", "from 1,000"], ["Ghanaian lines", "from 2,500"]]],
+          ["Weaving", [["Wig customization", "7,000"], ["Weaving half head", "6,000"], ["Full weaving", "8,000"], ["Bonding / tracking", "6,000"], ["Micro link installation", "from 10,000"], ["Nano link installation", "from 12,000"]]],
+          ["Dreadlocks", [["Artificial dreads installation (Short / Medium / Long)", "12,000 / 15,000 / 20,000", "dreads"], ["Sister locks installation", "Ask us"], ["Sister locks retouch", "Ask us"], ["Microlocks installation", "Ask us"], ["Retouch locks", "from 3,500"]]],
+          ["Locs installation (Short / Medium / Long)", [["Traditional locks", "7,000 / 13,000 / 18,000"], ["Instant locks (crochet)", "10,000 / 20,000 / 30,000"], ["Interlocking", "8,500 / 15,000 / 20,000"]]]]
+      },
+      { t: "Caucasian Hair", s: [["Cuts, treatments & colour", [["Haircut plus beard", "2,000"], ["Haircut", "1,500"], ["Trim", "4,000"], ["Cut, trim & blow", "5,500"], ["Treatment (men)", "2,500"], ["Treatment (women)", "6,000"], ["Keratin", "18,000 - 35,000"], ["Keratin treatment", "8,000 - 15,000"], ["Boys haircut (1-11)", "1,000"], ["Boys haircut (11-18)", "1,500"], ["Colour root", "5,000"], ["Colour (whole hair)", "8,000 - 15,000"], ["Highlights (short hair)", "8,000"], ["Highlights (long hair)", "10,000 - 20,000"], ["Clean cut hair / beard", "1,500"], ["Clean cut shave / mini facial", "4,500"], ["Highlights root cover", "10,000 - 20,000"], ["Henna (natural colour)", "8,000"], ["Men colour", "3,800"]]]] },
+      {
+        t: "Facials & Skin", s: [
+          ["Luxury skin treatments", [["Microneedling Facial", "15,000"], ["HydraFacial", "15,000", "hydrafacial"], ["Chemical Peel Facial", "from 10,000"], ["Dermaplaning Facial", "10,500"]]],
+          ["Dr. Esth'e rituals", [["Deep Cleansing Skin Reset Ritual", "6,500"], ["Hydrating Dew & Restore Ritual", "8,500", "facial-ritual"], ["Glow Oxygen Glass Glow Ritual", "9,500"], ["Sensitive Calm & Soothe Ritual", "7,500"], ["Acne Clear Skin Renewal Ritual", "7,500"], ["Brightening Luminous & Even-Tone Ritual", "10,500"], ["Anti-Aging Timeless Skin Ritual", "10,500"], ["Express 30-Minute Glow Reset", "4,000"]]],
+          ["Specialist treatments", [["Deep Pore Botanical Facial", "5,000"], ["Glycolic Treatment, 1 hour", "8,000"], ["Salicylic Peel Treatment", "10,000"]]],
+          ["Facial add-ons", [["High Frequency", "2,000"], ["Radio Frequency", "2,000"], ["Galvanic", "2,500"], ["Ultrasonic", "2,000"], ["LED Light Therapy", "2,000"]]]]
+      },
+      {
+        t: "Body Treatments & Massages", s: [
+          ["Signature body treatments", [["Royal Roast Coffee Scrub, 2 hrs", "7,000"], ["Sugar Splash Body Scrub, 2 hrs", "7,000"], ["Body Scrub and Steam", "3,000"], ["Moroccan Bath", "12,000"]]],
+          ["Massages", [["Holistic Massage, 60 mins", "4,500", "massage-face"], ["Holistic Massage, 90 mins", "6,000"], ["Lymphatic Massage, 60 mins", "6,000"], ["Lymphatic Massage, 90 mins", "7,500"], ["Deep Tissue Massage, 60 mins", "6,000"], ["Deep Tissue Massage, 90 mins", "7,500"], ["Stress Relief, 45 mins", "5,000"], ["Foot Massage, 30 mins", "2,000"], ["Back Massage, 30 mins", "3,000"], ["Hot Stone Massage, 90 mins", "7,000", "hotstone"], ["Aromatherapy Massage, 60 mins", "5,000", "aromatherapy"], ["Aromatherapy Massage, 90 mins", "6,500"], ["Prenatal Massage, 60 mins", "5,000"], ["Reflexology, 30 mins", "from 3,000"], ["Reflexology, 60 mins", "from 4,000"], ["Reflexology, 90 mins", "from 6,000"], ["G5 Wells Massage, 90 mins", "6,500"]]]]
+      },
+      {
+        t: "Nails", s: [
+          ["Manicure", [["Ladies", "1,300"], ["Gents", "1,000"], ["Paraffin manicure", "2,500"], ["Gel manicure", "2,000", "manicure"], ["Gel application (hands)", "1,500"], ["Gel application (feet)", "1,700"]]],
+          ["Pedicure", [["Regular pedicure (normal polish)", "1,500"], ["Paraffin pedicure (normal polish)", "3,000"], ["Wells Spa pedicure (with gel revanish)", "4,000"], ["Gel pedicure", "2,500"], ["Wells Spa pedicure (without gel)", "2,500"], ["Paraffin pedicure with gel varnish", "3,500"], ["Artistic gel pedicure", "3,000", "pedicure"], ["French gel revanish", "1,500"]]],
+          ["Nail extensions (incl. gel application)", [["Acrylics", "5,000"], ["Overlays", "3,500"], ["Sculpting", "5,500"], ["Gum gel", "3,500"], ["Stick on", "2,500"], ["Infills", "3,500"], ["Gel X nails", "4,000"]]]]
+      },
+      {
+        t: "Waxing, Lashes, Brows & Makeup", s: [
+          ["Waxing", [["Underarms", "1,000"], ["Full arms", "3,000"], ["Half arms", "1,500"], ["Full legs", "4,000", "waxing"], ["Half legs", "2,000"], ["Back & chest", "from 4,000"], ["Bikini line", "2,500"], ["Brazilian", "4,000"], ["Manzilian", "5,000"], ["Full body waxing", "from 10,000"]]],
+          ["Lashes", [["Lashes refill", "3,000"], ["Standard", "4,000"], ["Classic", "4,500"], ["Volume", "5,500"], ["Mega volume", "6,500"]]],
+          ["Eyebrows", [["Microblading", "20,000"], ["Ombre brows", "30,000"], ["Micro shading", "30,000"], ["Eyebrow tint", "2,000"], ["Eyebrow shaping (razor, tweezing, threading)", "500"], ["Full facial threading", "2,000"]]],
+          ["Makeup", [["Face beat (without lashes)", "2,500"], ["Full face", "4,000"]]]]
+      }
+    ];
+    const imgSrc = k => (window.IMG && IMG[k]) || "images/" + k + ".jpg";
+    const el = (t, c, x) => { const e = document.createElement(t); if (c) e.className = c; if (x) e.textContent = x; return e };
+    const fmt = p => p.replace(/^(from )?(\d)/, (m, f, d) => (f ? "From " : "") + "Ksh " + d);
+    const box = document.getElementById("menu");
+    MENU.forEach((g, i) => {
+      const d = el("details", "grp"); if (!i) d.open = true; d.appendChild(el("summary", "", g.t));
+      g.s.forEach(([h, items]) => { d.appendChild(el("h4", "", h)); items.forEach(([n, p, k]) => { const r = el("div", "it"); if (k) { const im = el("img", "th"); im.src = imgSrc(k); im.alt = ""; im.width = 72; im.height = 72; im.loading = "lazy"; r.appendChild(im) } r.appendChild(el("span", "nm", n)); r.appendChild(el("span", "pr", fmt(p))); const a = el("a", "bk", "Book"); a.dataset.service = n + " (" + h + ")"; r.appendChild(a); d.appendChild(r) }) }); box.appendChild(d)
+    });
+    document.querySelectorAll("[data-service]").forEach(a => { a.href = link(a.dataset.service); a.target = "_blank"; a.rel = "noopener" });
+  </script>
+</body>
+
+</html>
